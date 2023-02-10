@@ -8,6 +8,7 @@ declare module "styled-components" {
             secondary: string;
             focusColor: string;
             textColor: string;
+            offTextColor: string;
         }
     }
 }

@@ -19,10 +19,9 @@ const AsideContainer = styled.aside`
         justify-content: space-between;
         padding: 10% 0%;
         align-items: center;
-        background-color: red;
     }
 
-    li{
+    .profile{
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -51,14 +50,52 @@ const AsideContainer = styled.aside`
         border-radius: 50%;
     }
 
+    .dashboard, ul{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
     .dashboard{
         height: 45%;
-        background-color: aquamarine;
+        padding-bottom: 5%;
+    }
+
+    ul{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    li{
+        width: 80%;
+        height: 20%;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    li:hover{
+        background-color: var(--primary-color);
+    }
+
+    .icon{
+        font-size: 2rem;
+        margin: 0 20% 0 5%;
+    }
+
+    .title{
+        font-size: 0.8rem;
+        padding: 4% 0% 3% 4%;
+        color: gray;
     }
 
     .preferences{
         height: 25%;
-        background-color: gray;
+        background-color: var(--off-text-color);
     }
 
 `
