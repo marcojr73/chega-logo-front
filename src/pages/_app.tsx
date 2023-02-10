@@ -1,6 +1,20 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import React from "react"
+import type { AppProps } from "next/app"
+import { ThemeContextProvider } from "@/providers/ThemeProvider"
+import Theme from "./_theme"
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import "../styles/reset.css"
+import dynamic from "next/dynamic"
+
+function App({ Component, pageProps }: AppProps) {
+  return (
+    <ThemeContextProvider>
+      <Theme/>
+      <Component {...pageProps} />
+    </ThemeContextProvider>
+  ) 
 }
+
+export default dynamic(() => Promise.resolve(App), {
+  ssr: false,
+})
