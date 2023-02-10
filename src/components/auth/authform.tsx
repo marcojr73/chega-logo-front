@@ -1,5 +1,6 @@
 import useToggleAuth from "@/hooks/useToggleAuth"
 import authApi from "@/repositories/authApi"
+import showError from "@/utils/showError"
 import Router from "next/router"
 import React from "react"
 import { useForm } from "react-hook-form"
@@ -11,7 +12,7 @@ const AuthForm = () => {
         formState: { errors },
         reset
     } = useForm()
-    
+
     const {page, textButton, textToggler, togglePages, loading, endLoading} = useToggleAuth(reset)
     
       async function auth(data: any) {
@@ -29,9 +30,8 @@ const AuthForm = () => {
             togglePages()
           }
         } catch (error: any) {
-        //   showError(error)
-        endLoading()
-        alert(error.message)
+            showError(error)
+            endLoading()
         }
       }
     return(

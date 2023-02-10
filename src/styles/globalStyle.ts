@@ -31,6 +31,10 @@ input, select, button{
     background-color: var(--background-color);
 }
 
+button{
+    cursor: pointer;
+}
+
 input:focus{
     border-top: none;
     border-left: none;

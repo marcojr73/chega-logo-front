@@ -71,6 +71,10 @@ const ContainerAuth = styled.main`
         height: 50%;
         background-color: var(--secondary-color);
     }
+
+    p{
+        cursor: pointer;
+    }
 `
 
 export default ContainerAuth
