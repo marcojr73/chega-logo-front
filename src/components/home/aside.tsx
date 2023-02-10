@@ -1,13 +1,20 @@
 import React from "react"
 import AsideContainer from "@/styles/homeStyles/AsideContainer"
 
-import { NextComponentType } from "next"
 import Image from "next/image"
 
 import { FaCashRegister, FaMapMarkerAlt, FaMoneyBillAlt, FaTruck } from "react-icons/fa"
 import { IoIosSettings, IoMdExit } from "react-icons/io"
+import { TsetContent } from "@/interfaces"
+import Truckes from "./truckes"
+import Places from "./places"
+import Budget from "./budget"
+import Revenues from "./revenues"
+import Settings from "./settings"
+import Exit from "./exit"
 
-const Aside: NextComponentType = () => {
+const Aside = ({ setContent }: TsetContent) => {
+
     return (
         <AsideContainer>
             <div className="business">
@@ -26,19 +33,19 @@ const Aside: NextComponentType = () => {
                 </div>
             </div>
             <div className="dashboard">
-                <p className="title">Dashboard</p>
+                <p className="menu">Dashboard</p>
                 <ul>
-                    <li><FaTruck className="icon" /><p>Caminhões</p></li>
-                    <li><FaMapMarkerAlt className="icon" /><p>Localidades</p></li>
-                    <li><FaMoneyBillAlt className="icon" /><p>Orçamentos</p></li>
-                    <li><FaCashRegister className="icon" /><p>Faturamentos</p></li>
+                    <li onClick={() => setContent({ title: "Caminhões", element: <Truckes /> })} ><FaTruck className="icon" /><p>Caminhões</p></li>
+                    <li onClick={() => setContent({ title: "Localidades", element: <Places /> })} ><FaMapMarkerAlt className="icon" /><p>Localidades</p></li>
+                    <li onClick={() => setContent({ title: "Orçamentos", element: <Budget /> })} ><FaMoneyBillAlt className="icon" /><p>Orçamentos</p></li>
+                    <li onClick={() => setContent({ title: "Faturamentos", element: <Revenues /> })}><FaCashRegister className="icon" /><p>Faturamentos</p></li>
                 </ul>
             </div>
             <div className="preferences">
-                <p className="title">Preferencias</p>
+                <p className="menu">Preferencias</p>
                 <ul>
-                    <li><IoIosSettings className="icon" /><p>Configurações</p></li>
-                    <li><IoMdExit className="icon" /><p>Sair</p></li>
+                    <li onClick={() => setContent({ title: "Configurações", element: <Settings /> })}><IoIosSettings className="icon" /><p>Configurações</p></li>
+                    <li onClick={() => setContent({ title: "Sair", element: <Exit /> })}><IoMdExit className="icon" /><p>Sair</p></li>
                 </ul>
             </div>
         </AsideContainer>

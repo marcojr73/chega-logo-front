@@ -5,7 +5,7 @@ const AsideContainer = styled.aside`
     height: 100vh;
     display: flex;
     flex-direction: column;
-    border-right: 2px solid var(--primary-color);
+    border-right: 4px solid var(--primary-color);
 
     h1{
         font-size: 2rem;
@@ -84,9 +84,9 @@ const AsideContainer = styled.aside`
         margin: 0 20% 0 5%;
     }
 
-    .title{
+    .menu{
         font-size: 0.8rem;
-        padding: 4% 0% 6% 4%;
+        padding: 4% 0% 6% 8%;
         color: var(--off-text-color);
         height: 10%;
     }

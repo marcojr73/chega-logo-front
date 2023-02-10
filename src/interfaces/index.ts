@@ -32,17 +32,42 @@ type Tuser = {
     password: string
 }
 
-type TauthProps = { 
-    textButton: string | JSX.Element, 
-    setTextButton: React.Dispatch<React.SetStateAction<string | JSX.Element>>, 
-    textToggler: string, 
+type TauthProps = {
+    textButton: string | JSX.Element,
+    setTextButton: React.Dispatch<React.SetStateAction<string | JSX.Element>>,
+    textToggler: string,
     setTextToggler: React.Dispatch<React.SetStateAction<string>>,
     url: string,
-    setUrl:  React.Dispatch<React.SetStateAction<"sign-in" | "sign-up">>,
+    setUrl: React.Dispatch<React.SetStateAction<"sign-in" | "sign-up">>,
 }
+
+type TcontentHome = {
+    content: {
+        title: string,
+        element: JSX.Element
+    }
+}
+
+type TsetContent = {
+    setContent: React.Dispatch<React.SetStateAction<{
+        title: string;
+        element: JSX.Element;
+    }>>
+}
+
+type Tcontent = {
+    content: {
+        title: string;
+        element: JSX.Element;
+    }
+}
+
 export type {
     Ttheme,
     TProps,
     Tuser,
-    TauthProps
+    TauthProps,
+    TcontentHome,
+    TsetContent,
+    Tcontent
 }
