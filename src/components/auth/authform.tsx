@@ -4,6 +4,7 @@ import showError from "@/utils/showError"
 import Router from "next/router"
 import React from "react"
 import { useForm } from "react-hook-form"
+import { toast } from "react-toastify"
 
 const AuthForm = () => {
     const {
@@ -22,11 +23,13 @@ const AuthForm = () => {
           if(page === "sign-in"){
               const response = await authApi.authApi(data, "sign-in")
               localStorage.setItem("token", response)
+              toast("Sucesso")
               endLoading()
               Router.push("/home")
           } else {
             await authApi.authApi(data, "sign-up")
             endLoading()
+            toast("Sucesso")
             togglePages()
           }
         } catch (error: any) {

@@ -14,8 +14,10 @@ export default createGlobalStyle`
     --background-color: ${props => props.theme.colors.backgroundColor};
     --focus-color: ${props => props.theme.colors.focusColor};
     --text-color: ${props => props.theme.colors.textColor};
+    --off-text-color: ${props => props.theme.colors.offTextColor};
     font-family: 'Oswald', sans-serif;
-    color: var(--text-color)
+    color: var(--text-color);
+    cursor: default;
 }
 body{
     width: 100vw;
