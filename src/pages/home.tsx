@@ -1,9 +1,13 @@
 import React from "react"
 import { NextPage } from "next"
+import HomeContainer from "@/styles/homeStyles"
+import Aside from "@/components/home/aside"
 
 const Home: NextPage = () => {
     return (
-        <h1>home</h1>
+        <HomeContainer>
+            <Aside/>
+        </HomeContainer>
     )
 }
 
