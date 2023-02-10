@@ -27,7 +27,22 @@ type TProps = {
     children: ReactNode
 }
 
+type Tuser = {
+    userName: string;
+    password: string
+}
+
+type TauthProps = { 
+    textButton: string | JSX.Element, 
+    setTextButton: React.Dispatch<React.SetStateAction<string | JSX.Element>>, 
+    textToggler: string, 
+    setTextToggler: React.Dispatch<React.SetStateAction<string>>,
+    url: string,
+    setUrl:  React.Dispatch<React.SetStateAction<"sign-in" | "sign-up">>,
+}
 export type {
     Ttheme,
-    TProps
+    TProps,
+    Tuser,
+    TauthProps
 }
