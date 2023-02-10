@@ -1,8 +1,9 @@
 import { ThemeProvider } from "styled-components"
-import GlobalStyle from "@/styles/themes/globalStyle"
+import GlobalStyle from "@/styles/globalStyle"
 
 import React, { useContext } from "react"
 import { themeContext } from "@/providers/ThemeProvider" 
+import Toastify from "@/utils/toastify"
 
 export default function Theme() {
 
@@ -10,6 +11,7 @@ export default function Theme() {
 
   return (
     <ThemeProvider theme={theme}>
+      <Toastify/>
       <GlobalStyle />
     </ThemeProvider>
   )

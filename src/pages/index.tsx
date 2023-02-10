@@ -1,9 +1,27 @@
+import AuthForm from "@/components/auth/authform"
+import ContainerAuth from "@/styles/authStyles"
 import { NextPage } from "next"
+import Image from "next/image"
 import React from "react"
 
 const AuthPage: NextPage = () => {
   return (
-      <>AuthPage</>
+    <ContainerAuth>
+      <section className="auth-square">
+        <div className="slogan">
+          <h1>Chega logo <br /> transportadora</h1>
+          <Image
+            src="/images/truck-logo.png"
+            alt="truck-image"
+            width={250}
+            height={200}
+            className="logo"
+          />
+          <h2>Felicidade em entregar bem!</h2>
+        </div>
+        <AuthForm/>
+      </section>
+    </ContainerAuth>
   )
 }
 
