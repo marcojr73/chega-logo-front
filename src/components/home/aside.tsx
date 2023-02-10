@@ -4,7 +4,8 @@ import AsideContainer from "@/styles/homeStyles/AsideContainer"
 import { NextComponentType } from "next"
 import Image from "next/image"
 
-import {FaCashRegister, FaMapMarkerAlt, FaMoneyBillAlt, FaTruck} from "react-icons/fa"
+import { FaCashRegister, FaMapMarkerAlt, FaMoneyBillAlt, FaTruck } from "react-icons/fa"
+import { IoIosSettings, IoMdExit } from "react-icons/io"
 
 const Aside: NextComponentType = () => {
     return (
@@ -27,13 +28,19 @@ const Aside: NextComponentType = () => {
             <div className="dashboard">
                 <p className="title">Dashboard</p>
                 <ul>
-                    <li><FaTruck className="icon"/><p>Caminhões</p></li>
-                    <li><FaMapMarkerAlt className="icon"/><p>Localidades</p></li>
-                    <li><FaMoneyBillAlt className="icon"/><p>Orçamentos</p></li>
-                    <li><FaCashRegister className="icon"/><p>Faturamentos</p></li>
+                    <li><FaTruck className="icon" /><p>Caminhões</p></li>
+                    <li><FaMapMarkerAlt className="icon" /><p>Localidades</p></li>
+                    <li><FaMoneyBillAlt className="icon" /><p>Orçamentos</p></li>
+                    <li><FaCashRegister className="icon" /><p>Faturamentos</p></li>
                 </ul>
             </div>
-            <div className="preferences"></div>
+            <div className="preferences">
+                <p className="title">Preferencias</p>
+                <ul>
+                    <li><IoIosSettings className="icon" /><p>Configurações</p></li>
+                    <li><IoMdExit className="icon" /><p>Sair</p></li>
+                </ul>
+            </div>
         </AsideContainer>
     )
 }

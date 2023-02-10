@@ -54,28 +54,25 @@ const AsideContainer = styled.aside`
         width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
     }
     
     .dashboard{
         height: 45%;
-        padding-bottom: 5%;
     }
-
+    
     ul{
-        height: 100%;
-        display: flex;
-        flex-direction: column;
+        height: 80%;
         align-items: center;
     }
 
     li{
         width: 80%;
-        height: 20%;
+        height: 7vh;
         display: flex;
         align-items: center;
         border-radius: 10px;
         cursor: pointer;
+        margin-bottom: 5%;
     }
 
     li:hover{
@@ -89,13 +86,13 @@ const AsideContainer = styled.aside`
 
     .title{
         font-size: 0.8rem;
-        padding: 4% 0% 3% 4%;
-        color: gray;
+        padding: 4% 0% 6% 4%;
+        color: var(--off-text-color);
+        height: 10%;
     }
 
     .preferences{
         height: 25%;
-        background-color: var(--off-text-color);
     }
 
 `
