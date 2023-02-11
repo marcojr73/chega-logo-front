@@ -5,6 +5,7 @@ import showError from "@/utils/showError"
 import { NextComponentType } from "next"
 import React, { useContext, useState } from "react"
 import { useForm } from "react-hook-form"
+import { toast } from "react-toastify"
 
 const UpsertTruckes: NextComponentType = () => {
     const [textNewTruck, setTextNewTruck] = useState<"Cadastrar" | JSX.Element>("Cadastrar")
@@ -25,20 +26,25 @@ const UpsertTruckes: NextComponentType = () => {
             setTextNewTruck("Cadastrar")
             const response = await truckesApi.findTruckesApi()
             setTruckes(response)
-            reset()
+            toast("Sucesso")
+            // reset()
         } catch (error) {
             showError(error)
             setTextNewTruck("Cadastrar")
         }
     }
 
-    function updateTruck(data: any) {
+    async function updateTruck(data: any) {
         try {
             setTextUpdateTruck(<Loader />)
-            // await truckesApi.newTruckApi(data)
+            await truckesApi.updateTruckApi(data)
             setTextUpdateTruck("Atualizar")
-            reset()
+            const response = await truckesApi.findTruckesApi()
+            setTruckes(response)
+            toast("Sucesso")
+            // reset()
         } catch (error) {
+            setTextUpdateTruck("Atualizar")
             showError(error)
         }
     }

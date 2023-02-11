@@ -65,9 +65,9 @@ const TruckesContainer = styled.section`
     .icon{
         color: red;
     }
-    
+
     li{
-        height: 12%;
+        height: 8%;
         display: flex;
         align-items: center;
         width: 90%;
@@ -77,11 +77,23 @@ const TruckesContainer = styled.section`
         border-bottom: 2px solid var(--background-color);
     }
 
-    p{
+    .item{
         width: 19.7%;
         display: flex;
         justify-content: flex-start;
         align-items: center;
+    }
+
+    .not-text{
+        width: 100%;
+        padding: 10% 0%;
+    }
+
+    .not-register{
+        margin-top: 5%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
 `
 
