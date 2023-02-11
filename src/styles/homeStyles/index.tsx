@@ -21,7 +21,8 @@ const HomeContainer = styled.main`
     .box{
         width: 80%;
         height: 80%;
-        background-color: aliceblue;
+        background-color: var(--primary-color);
+        border-radius: 10px;
     }
 `
 
