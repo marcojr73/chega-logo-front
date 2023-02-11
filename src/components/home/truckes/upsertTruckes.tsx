@@ -1,9 +1,14 @@
-import TruckesContainer from "@/styles/homeStyles/truckesContainer"
+import truckesApi from "@/repositories/truckesApi"
+import Loader from "@/utils/loader"
+import showError from "@/utils/showError"
 import { NextComponentType } from "next"
-import React from "react"
+import React, { useState } from "react"
 import { useForm } from "react-hook-form"
 
-const Truckes: NextComponentType = () => {
+const UpsertTruckes: NextComponentType = () => {
+    const [textNewTruck, setTextNewTruck] = useState<"Cadastrar" | JSX.Element>("Cadastrar")
+    const [textUpdateTruck, setTextUpdateTruck] = useState<"Atualizar" | JSX.Element>("Atualizar")
+
     const {
         register,
         handleSubmit,
@@ -11,16 +16,31 @@ const Truckes: NextComponentType = () => {
         reset
     } = useForm()
 
-    function newTruck(data: any){
-        console.log(data)
+    async function newTruck(data: any) {
+        try {
+            setTextNewTruck(<Loader />)
+            await truckesApi.newTruckApi(data)
+            setTextNewTruck("Cadastrar")
+            reset()
+        } catch (error) {
+            showError(error)
+            setTextNewTruck("Cadastrar")
+        }
     }
 
-    function updateTruck(data: any){
-        console.log(data)
+    function updateTruck(data: any) {
+        try {
+            setTextUpdateTruck(<Loader />)
+            // await truckesApi.newTruckApi(data)
+            setTextUpdateTruck("Atualizar")
+            reset()
+        } catch (error) {
+            showError(error)
+        }
     }
 
     return (
-        <TruckesContainer>
+        <>
             <form action="">
                 <div className="top-inputs">
                     <div className="input-top">
@@ -38,7 +58,7 @@ const Truckes: NextComponentType = () => {
                     <div className="input-bot">
                         <input type="number" placeholder="Ano" {...register("year", { required: true })} />
                         {errors?.year?.type === "required" ?
-                            <p className="error">Insira um ano</p> : null}
+                            <p className="error">Insira o ano do veículo</p> : null}
                     </div>
                     <div className="input-bot">
                         <input type="text" placeholder="Cor" {...register("color", { required: true })} />
@@ -51,13 +71,13 @@ const Truckes: NextComponentType = () => {
                             <p className="error">Insira o rendimento do veículo</p> : null}
                     </div>
                 </div>
-                <div className="buttons">
-                    <button type="submit" onClick={() => handleSubmit(newTruck)()}>Cadastrar</button>
-                    <button type="submit" onClick={() => handleSubmit(newTruck)()}>Atualizar</button>
-                </div>
             </form>
-        </TruckesContainer>
+            <div className="buttons-box">
+                <button type="submit" onClick={() => handleSubmit(newTruck)()}>{textNewTruck}</button>
+                <button type="submit" onClick={() => handleSubmit(updateTruck)()}>{textUpdateTruck}</button>
+            </div>
+        </>
     )
 }
 
-export default Truckes
+export default UpsertTruckes

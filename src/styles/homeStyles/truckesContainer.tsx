@@ -5,27 +5,22 @@ const TruckesContainer = styled.section`
 
     form{
         width: 100%;
-        height: 30%;
+        height: 25%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-top: 2%;
     }
 
-    .top-inputs{
+    .top-inputs, .bottom-inputs{
         width: 90%;
-        height: 20%;
+        height: 25%;
         display: flex;
         justify-content: space-between;
+    }
+
+    .top-inputs{        
         margin-bottom: 2%;
-    }
-
-    .bottom-inputs{
-        width: 90%;
-        height: 20%;
-        display: flex;
-        justify-content: space-between;
     }
 
     .input-top{
@@ -43,17 +38,19 @@ const TruckesContainer = styled.section`
         height: 100%;
     }
 
-    .buttons{
-        margin-top: 2%;
-        width: 50%;
-        height: 20%;
+    .buttons-box{
+        width: 100%;
+        height: 7%;
+        display: flex;
+        justify-content: center;
     }
 
     button{
-        width: 40%;
+        width: 15%;
         height: 100%;
         background-color: var(--secondary-color);
         font-weight: bold;
+        margin: 0 3%;
     }
 `
 

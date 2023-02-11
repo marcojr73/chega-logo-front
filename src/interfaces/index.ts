@@ -62,6 +62,14 @@ type Tcontent = {
     }
 }
 
+type Ttruck = {
+    name: string;
+    licensePlate: string;
+    year: string;
+    color: string;
+    eficience: string;
+}
+
 export type {
     Ttheme,
     TProps,
@@ -69,5 +77,6 @@ export type {
     TauthProps,
     TcontentHome,
     TsetContent,
-    Tcontent
+    Tcontent,
+    Ttruck
 }

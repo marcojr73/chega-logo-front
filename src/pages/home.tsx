@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { NextPage } from "next"
 import HomeContainer from "@/styles/homeStyles"
 import Aside from "@/components/home/aside"
-import Truckes from "@/components/home/truckes"
+import Truckes from "@/components/home/truckes/index.tsx"
 import Content from "@/components/home/content"
 
 const Home: NextPage = () => {

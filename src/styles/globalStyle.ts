@@ -36,7 +36,7 @@ input, select{
 button{
     cursor: pointer;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     font-size: 0.8vw;
     color: var(--text-color);
     background-color: var(--background-color);
@@ -54,6 +54,7 @@ input:focus{
     color: #f51313;
     width: 70%;
     font-size: 0.7rem;
+    padding: 0.6% 1%;
 }
 
 a{

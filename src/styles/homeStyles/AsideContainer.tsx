@@ -76,7 +76,7 @@ const AsideContainer = styled.aside`
     }
 
     li:hover{
-        background-color: var(--primary-color);
+        background-color: var(--secondary-color);
     }
 
     .icon{
