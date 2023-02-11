@@ -24,7 +24,7 @@ body{
     height: 100vh;
     background-color: var(--background-color);
 }
-input, select, button{
+input, select{
     border: none;
     border-radius: 3px;
     font-size: 0.8vw;
@@ -35,6 +35,11 @@ input, select, button{
 
 button{
     cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.8vw;
+    color: var(--text-color);
+    background-color: var(--background-color);
 }
 
 input:focus{
@@ -49,6 +54,7 @@ input:focus{
     color: #f51313;
     width: 70%;
     font-size: 0.7rem;
+    padding: 0.6% 1%;
 }
 
 a{

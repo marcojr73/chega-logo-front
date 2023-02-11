@@ -5,14 +5,17 @@ import Theme from "./_theme"
 
 import "../styles/reset.css"
 import dynamic from "next/dynamic"
+import { TruckesContextProvider } from "@/providers/truckesProvider"
 
 function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeContextProvider>
-      <Theme/>
-      <Component {...pageProps} />
+      <TruckesContextProvider>
+        <Theme />
+        <Component {...pageProps} />
+      </TruckesContextProvider>
     </ThemeContextProvider>
-  ) 
+  )
 }
 
 export default dynamic(() => Promise.resolve(App), {
