@@ -1,13 +1,15 @@
+import { truckesContext } from "@/providers/truckesProvider"
 import truckesApi from "@/repositories/truckesApi"
 import Loader from "@/utils/loader"
 import showError from "@/utils/showError"
 import { NextComponentType } from "next"
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import { useForm } from "react-hook-form"
 
 const UpsertTruckes: NextComponentType = () => {
     const [textNewTruck, setTextNewTruck] = useState<"Cadastrar" | JSX.Element>("Cadastrar")
     const [textUpdateTruck, setTextUpdateTruck] = useState<"Atualizar" | JSX.Element>("Atualizar")
+    const { setTruckes } = useContext(truckesContext)
 
     const {
         register,
@@ -21,6 +23,8 @@ const UpsertTruckes: NextComponentType = () => {
             setTextNewTruck(<Loader />)
             await truckesApi.newTruckApi(data)
             setTextNewTruck("Cadastrar")
+            const response = await truckesApi.findTruckesApi()
+            setTruckes(response)
             reset()
         } catch (error) {
             showError(error)

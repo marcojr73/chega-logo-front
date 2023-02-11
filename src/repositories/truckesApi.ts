@@ -8,6 +8,13 @@ async function newTruckApi(data: Ttruck) {
     return response.data
 }
 
+async function findTruckesApi() {
+    const config = authorizationApi.getHeadersConfig()
+    const response = await axiosInstance.get("/truckes", config)
+    return response.data
+}
+
 export default {
-    newTruckApi
+    newTruckApi,
+    findTruckesApi
 }  

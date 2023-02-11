@@ -9,6 +9,7 @@ type Ttheme = {
             secondary: string;
             focusColor: string;
             textColor: string;
+            offTextColor: string;
         };
     },
     setTheme: (newState: {
@@ -19,8 +20,30 @@ type Ttheme = {
             secondary: string;
             focusColor: string;
             textColor: string;
+            offTextColor: string;
         };
     },) => void
+}
+
+type TcontexTruck = {
+    truckes: {
+        id: number;
+        name: string;
+        licensePlate: string;
+        year: string;
+        color: string;
+        efficiency: string;
+        createdAt: string;
+    }[] | never []
+    setTruckes: (newState: {
+        id: number;
+        name: string;
+        licensePlate: string;
+        year: string;
+        color: string;
+        efficiency: string;
+        createdAt: string;
+    }[] | never [],) => void
 }
 
 type TProps = {
@@ -78,5 +101,6 @@ export type {
     TcontentHome,
     TsetContent,
     Tcontent,
-    Ttruck
+    Ttruck,
+    TcontexTruck
 }
