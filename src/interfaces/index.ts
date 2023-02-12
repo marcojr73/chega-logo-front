@@ -61,6 +61,12 @@ type TcontexPlaces = {
     }[] | never [],) => void
 }
 
+interface Tstats {
+    sumValues: number,
+    sumTravels: number,
+    mediaValues: number;
+}
+
 type TProps = {
     children: ReactNode
 }
@@ -118,5 +124,6 @@ export type {
     Tcontent,
     Ttruck,
     TcontexTruck,
-    TcontexPlaces
+    TcontexPlaces,
+    Tstats
 }
