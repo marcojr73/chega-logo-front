@@ -6,13 +6,18 @@ import Theme from "./_theme"
 import "../styles/reset.css"
 import dynamic from "next/dynamic"
 import { TruckesContextProvider } from "@/providers/truckesProvider"
+import { PlacesContextProvider } from "@/providers/placesProvider"
 
 function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeContextProvider>
       <TruckesContextProvider>
-        <Theme />
-        <Component {...pageProps} />
+        <PlacesContextProvider>
+
+          <Theme />
+          <Component {...pageProps} />
+          
+        </PlacesContextProvider>
       </TruckesContextProvider>
     </ThemeContextProvider>
   )

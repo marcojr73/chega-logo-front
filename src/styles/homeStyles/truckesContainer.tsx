@@ -60,6 +60,7 @@ const TruckesContainer = styled.section`
         display: flex;
         flex-direction: column;
         align-items: center;
+        position: relative;
     }
 
     .icon{
@@ -94,6 +95,19 @@ const TruckesContainer = styled.section`
         display: flex;
         align-items: center;
         flex-direction: column;
+    }
+
+    .toggle-pages{
+        display: flex;
+        justify-content: space-between;
+        width: 21%;
+        position: absolute;
+        bottom: 4%;
+        right: 5%;
+    }
+
+    .toggle{
+        padding: 0 0 0 5%;
     }
 `
 

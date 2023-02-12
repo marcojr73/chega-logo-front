@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import React, { createContext, useState } from "react"
 import { TcontexTruck, TProps } from "@/interfaces"
-import usePersistedState from "@/hooks/usePersistedState"
 
 const initialValue = {
     truckes: [

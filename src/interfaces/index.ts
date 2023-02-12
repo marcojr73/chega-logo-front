@@ -46,6 +46,21 @@ type TcontexTruck = {
     }[] | never [],) => void
 }
 
+type TcontexPlaces = {
+    places: {
+        id: number;
+        name: string;
+        distance: string;
+        createdAt: string;
+    }[] | never []
+    setPlaces: (newState: {
+        id: number;
+        name: string;
+        distance: string;
+        createdAt: string;
+    }[] | never [],) => void
+}
+
 type TProps = {
     children: ReactNode
 }
@@ -102,5 +117,6 @@ export type {
     TsetContent,
     Tcontent,
     Ttruck,
-    TcontexTruck
+    TcontexTruck,
+    TcontexPlaces
 }

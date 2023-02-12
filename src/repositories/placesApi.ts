@@ -1,3 +1,4 @@
+import authorizationApi from "@/config/authorizationApi"
 import axiosInstance from "@/config/axiosInstance"
 
 async function uploadCsvApi(file: any) {
@@ -14,6 +15,13 @@ async function uploadCsvApi(file: any) {
     return response.data
 }
 
+async function findPlacesApi(page: number){
+    const config = authorizationApi.getHeadersConfig()
+    const response = await axiosInstance.get(`/places?page=${page}`, config)
+    return response.data
+}
+
 export default {
     uploadCsvApi,
+    findPlacesApi
 }  

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useEffect, useState } from "react"
 
 import { NextComponentType } from "next"
 import { truckesContext } from "@/providers/truckesProvider"
@@ -12,22 +12,24 @@ import Image from "next/image"
 const ListTruckes: NextComponentType = () => {
 
     const { truckes, setTruckes } = useContext(truckesContext)
+    const [page, setPage] = useState(1)
 
     useEffect(() => {
         (async function () {
+            console.log(page)
             try {
-                const response = await truckesApi.findTruckesApi()
+                const response = await truckesApi.findTruckesApi(page)
                 setTruckes(response)
             } catch (error) {
                 showError(error)
             }
         })()
-    }, [])
+    }, [page])
 
     async function deleteTruck(licensePlate: string) {
         try {
             await truckesApi.deleteTruckApi(licensePlate)
-            const response = await truckesApi.findTruckesApi()
+            const response = await truckesApi.findTruckesApi(page)
             toast("Sucesso")
             setTruckes(response)
         } catch (error) {
@@ -65,20 +67,16 @@ const ListTruckes: NextComponentType = () => {
                                 <p className="item">{truck.licensePlate}</p>
                                 <p className="item">{truck.year}</p>
                                 <p className="item">{truck.color}</p>
-                                <p className="item">{truck.efficiency}</p>
+                                <p className="item">{truck.efficiency} Km/L</p>
                                 <span>{<MdDelete className="icon" onClick={() => deleteTruck(truck.licensePlate)} />}</span>
                             </li>
                         )
                     })
             }
-            {
-                truckes.length === 10 ?
-                    <li>
-                        <p>Próxima página</p>
-                        <p>Página anterior</p>
-                    </li>
-                    : null
-            }
+            <div className="toggle-pages">
+                <p className="toggle" onClick={() => page > 1 ? setPage(page - 1) : null}>Página anterior</p>
+                <p className="toggle" onClick={() => truckes.length === 10 ? setPage(page + 1) : null}>Próxima página</p>
+            </div>
         </ul>
     )
 }

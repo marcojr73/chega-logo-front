@@ -8,9 +8,9 @@ async function newTruckApi(data: Ttruck) {
     return response.data
 }
 
-async function findTruckesApi() {
+async function findTruckesApi(page: number) {
     const config = authorizationApi.getHeadersConfig()
-    const response = await axiosInstance.get("/truckes", config)
+    const response = await axiosInstance.get(`/truckes?page=${page}`, config)
     return response.data
 }
 
