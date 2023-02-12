@@ -7,6 +7,13 @@ async function postRevenueApi(value: number){
     return response.data
 }
 
+async function getStatsRevenues(){
+    const config = authorizationApi.getHeadersConfig()
+    const response = await axiosInstance.get("revenues", config)
+    return response.data
+}
+
 export default {
-    postRevenueApi
+    postRevenueApi,
+    getStatsRevenues
 }
