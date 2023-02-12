@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useContext, useEffect } from "react"
 
-import { NextComponentType } from "next"
 import { truckesContext } from "@/providers/truckesProvider"
 import showError from "@/utils/showError"
 import truckesApi from "@/repositories/truckesApi"
@@ -9,10 +8,9 @@ import { MdDelete } from "react-icons/md"
 import { toast } from "react-toastify"
 import Image from "next/image"
 
-const ListTruckes: NextComponentType = () => {
+const ListTruckes = ({ page, setPage }: { page: number, setPage: React.Dispatch<React.SetStateAction<number>> }) => {
 
     const { truckes, setTruckes } = useContext(truckesContext)
-    const [page, setPage] = useState(1)
 
     useEffect(() => {
         (async function () {

@@ -21,7 +21,14 @@ async function findPlacesApi(page: number){
     return response.data
 }
 
+async function deletePlacesApi(id: number){
+    const config = authorizationApi.getHeadersConfig()
+    const response = await axiosInstance.delete(`/places/${id}`, config)
+    return response.data
+}
+
 export default {
     uploadCsvApi,
-    findPlacesApi
+    findPlacesApi,
+    deletePlacesApi
 }  

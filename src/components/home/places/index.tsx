@@ -12,11 +12,14 @@ const Places: NextComponentType = () => {
     const { places, setPlaces } = useContext(placesContext)
     const [page, setPage] = useState(1)
 
-    const onDrop = useCallback((uploadedFile: any) => {
+    const onDrop = useCallback(async (uploadedFile: any) => {
         const data = new FormData()
         data.append("file", uploadedFile[0])
         try {
-            placesApi.uploadCsvApi(data)
+            await placesApi.uploadCsvApi(data)
+            const response = await placesApi.findPlacesApi(page)
+            console.log(response)
+            setPlaces(response)
             toast("Sucesso")
         } catch (error) {
             showError(error)
@@ -30,6 +33,17 @@ const Places: NextComponentType = () => {
             ".csv, application/vnd.ms-excel, text/csv": [""]
         }
     })
+
+    async function deletePlace(id: number) {
+        try {
+            await placesApi.deletePlacesApi(id)
+            const response = await placesApi.findPlacesApi(page)
+            setPlaces(response)
+            toast("Deletado")
+        } catch (error) {
+            showError(error)
+        }
+    }
 
     useEffect(() => {
         (async function () {
@@ -67,7 +81,7 @@ const Places: NextComponentType = () => {
                                 <li key={place.id}>
                                     <p className="name">{place.name}</p>
                                     <p className="distance">{place.distance} Km</p>
-                                    <span>{<MdDelete className="icon" />}</span>
+                                    <span onClick={() => deletePlace(place.id)}>{<MdDelete className="icon" />}</span>
                                 </li>
                             )
                         })

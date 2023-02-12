@@ -30,6 +30,7 @@ const PlacesContainer = styled.section`
     
     .icon{
         color: red;
+        cursor: pointer;
     }
     
     li{
@@ -68,6 +69,7 @@ const PlacesContainer = styled.section`
 
     .toggle{
         padding: 0 0 0 5%;
+        cursor: pointer;
     }
 
 `

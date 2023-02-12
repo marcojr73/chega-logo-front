@@ -7,7 +7,7 @@ import React, { useContext, useState } from "react"
 import { useForm } from "react-hook-form"
 import { toast } from "react-toastify"
 
-const UpsertTruckes: NextComponentType = () => {
+const UpsertTruckes= ({page}: {page: number}) => {
     const [textNewTruck, setTextNewTruck] = useState<"Cadastrar" | JSX.Element>("Cadastrar")
     const [textUpdateTruck, setTextUpdateTruck] = useState<"Atualizar" | JSX.Element>("Atualizar")
     const { setTruckes } = useContext(truckesContext)
@@ -24,7 +24,7 @@ const UpsertTruckes: NextComponentType = () => {
             setTextNewTruck(<Loader />)
             await truckesApi.newTruckApi(data)
             setTextNewTruck("Cadastrar")
-            const response = await truckesApi.findTruckesApi()
+            const response = await truckesApi.findTruckesApi(page)
             setTruckes(response)
             toast("Sucesso")
             // reset()
@@ -39,7 +39,7 @@ const UpsertTruckes: NextComponentType = () => {
             setTextUpdateTruck(<Loader />)
             await truckesApi.updateTruckApi(data)
             setTextUpdateTruck("Atualizar")
-            const response = await truckesApi.findTruckesApi()
+            const response = await truckesApi.findTruckesApi(page)
             setTruckes(response)
             toast("Sucesso")
             // reset()
