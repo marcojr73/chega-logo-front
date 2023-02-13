@@ -28,6 +28,7 @@
         "avarage revenues": "Avarage revenues",
         "title char": "Travel revenue in the last 12 months",
         "language": "Language",
-        "theme": "Theme"
+        "theme": "Theme",
+        "really exit": "Really want to leave?"
     }
 }

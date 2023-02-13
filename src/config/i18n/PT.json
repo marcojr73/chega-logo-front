@@ -28,6 +28,7 @@
         "avarage revenues": "Média de faturamento por mês",
         "title char": "Faturamento de viagens nos ultimos 12 meses",
         "language": "Linguagem",
-        "theme": "Tema"
+        "theme": "Tema",
+        "really exit": "Deseja mesmo sair?"
     }
 }
