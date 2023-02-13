@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { NextPage } from "next"
+
 import HomeContainer from "@/styles/homeStyles"
 import Aside from "@/components/home/aside"
 import Truckes from "@/components/home/truckes"

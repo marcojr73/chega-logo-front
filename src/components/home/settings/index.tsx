@@ -1,12 +1,14 @@
+import { NextComponentType } from "next"
+import React, { useContext } from "react"
+
+import { useTranslation } from "react-i18next"
+import { BsMoonStarsFill, BsSunFill } from "react-icons/bs"
+import Switch from "react-switch"
+
 import { themeContext } from "@/providers/ThemeProvider"
 import SettingsContainer from "@/styles/homeStyles/settingsContainer"
 import dark from "@/styles/themes/dark"
 import light from "@/styles/themes/light"
-import { NextComponentType } from "next"
-import React, { useContext } from "react"
-import { useTranslation } from "react-i18next"
-import { BsMoonStarsFill, BsSunFill } from "react-icons/bs"
-import Switch from "react-switch"
 
 const Settings: NextComponentType = () => {
     const { theme, setTheme } = useContext(themeContext)

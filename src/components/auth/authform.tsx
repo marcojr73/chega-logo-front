@@ -1,10 +1,12 @@
+import React from "react"
+import Router from "next/router"
+
+import { useForm } from "react-hook-form"
+import { toast } from "react-toastify"
+
 import useToggleAuth from "@/hooks/useToggleAuth"
 import authApi from "@/repositories/authApi"
 import showError from "@/utils/showError"
-import Router from "next/router"
-import React from "react"
-import { useForm } from "react-hook-form"
-import { toast } from "react-toastify"
 
 const AuthForm = () => {
     const {

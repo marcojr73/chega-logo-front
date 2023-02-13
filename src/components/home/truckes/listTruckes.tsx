@@ -1,13 +1,14 @@
 import React, { useContext, useEffect } from "react"
 
-import { truckesContext } from "@/providers/truckesProvider"
-import showError from "@/utils/showError"
-import truckesApi from "@/repositories/truckesApi"
-
 import { MdDelete } from "react-icons/md"
 import { toast } from "react-toastify"
 import Image from "next/image"
 import { useTranslation } from "react-i18next"
+
+import { truckesContext } from "@/providers/truckesProvider"
+import showError from "@/utils/showError"
+import truckesApi from "@/repositories/truckesApi"
+
 
 const ListTruckes = ({ page, setPage }: { page: number, setPage: React.Dispatch<React.SetStateAction<number>> }) => {
 

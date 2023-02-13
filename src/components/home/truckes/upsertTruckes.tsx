@@ -1,11 +1,13 @@
+import React, { useContext, useState } from "react"
+
+import { useForm } from "react-hook-form"
+import { useTranslation } from "react-i18next"
+import { toast } from "react-toastify"
+
 import { truckesContext } from "@/providers/truckesProvider"
 import truckesApi from "@/repositories/truckesApi"
 import Loader from "@/utils/loader"
 import showError from "@/utils/showError"
-import React, { useContext, useState } from "react"
-import { useForm } from "react-hook-form"
-import { useTranslation } from "react-i18next"
-import { toast } from "react-toastify"
 
 const UpsertTruckes= ({page}: {page: number}) => {
     const {t} = useTranslation()
@@ -28,7 +30,7 @@ const UpsertTruckes= ({page}: {page: number}) => {
             const response = await truckesApi.findTruckesApi(page)
             setTruckes(response)
             toast("Sucesso")
-            // reset()
+            reset()
         } catch (error) {
             showError(error)
             setTextNewTruck(t("register"))
@@ -43,7 +45,7 @@ const UpsertTruckes= ({page}: {page: number}) => {
             const response = await truckesApi.findTruckesApi(page)
             setTruckes(response)
             toast("Sucesso")
-            // reset()
+            reset()
         } catch (error) {
             setTextUpdateTruck(t("update"))
             showError(error)

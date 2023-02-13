@@ -1,8 +1,9 @@
-import AuthForm from "@/components/auth/authform"
-import ContainerAuth from "@/styles/authStyles"
 import { NextPage } from "next"
 import Image from "next/image"
 import React from "react"
+
+import AuthForm from "@/components/auth/authform"
+import ContainerAuth from "@/styles/authStyles"
 
 const AuthPage: NextPage = () => {
   return (

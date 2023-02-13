@@ -1,10 +1,11 @@
 import React from "react"
-import AsideContainer from "@/styles/homeStyles/AsideContainer"
-
 import Image from "next/image"
 
 import { FaCashRegister, FaMapMarkerAlt, FaMoneyBillAlt, FaTruck } from "react-icons/fa"
 import { IoIosSettings, IoMdExit } from "react-icons/io"
+import { useTranslation } from "react-i18next"
+
+import AsideContainer from "@/styles/homeStyles/AsideContainer"
 import { TsetContent } from "@/interfaces"
 import Truckes from "../truckes"
 import Places from "../places"
@@ -12,10 +13,9 @@ import Budget from "../budgets"
 import Revenues from "../revenues"
 import Settings from "../settings"
 import Exit from "../exit"
-import { useTranslation } from "react-i18next"
 
 const Aside = ({ setContent }: TsetContent) => {
-    const {t} = useTranslation()
+    const { t } = useTranslation()
     return (
         <AsideContainer>
             <div className="business">

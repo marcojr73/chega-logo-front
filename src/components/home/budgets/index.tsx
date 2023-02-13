@@ -1,17 +1,19 @@
+import { NextComponentType } from "next"
+import React, { useContext } from "react"
+import { useForm } from "react-hook-form"
+
+import { useTranslation } from "react-i18next"
+import { toast } from "react-toastify"
+
 import useCalculator from "@/hooks/useCalculator"
 import { placesContext } from "@/providers/placesProvider"
 import { truckesContext } from "@/providers/truckesProvider"
 import revenuesApi from "@/repositories/revenuesApi"
 import BudgetContainer from "@/styles/homeStyles/budgetsContainer"
 import showError from "@/utils/showError"
-import { NextComponentType } from "next"
-import React, { useContext } from "react"
-import { useForm } from "react-hook-form"
-import { useTranslation } from "react-i18next"
-import { toast } from "react-toastify"
 
 const Budget: NextComponentType = () => {
-    const {t} = useTranslation()
+    const { t } = useTranslation()
 
     const { truckes } = useContext(truckesContext)
     const { places } = useContext(placesContext)

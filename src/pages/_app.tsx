@@ -1,11 +1,12 @@
 import React from "react"
+import dynamic from "next/dynamic"
+
 import type { AppProps } from "next/app"
 import Theme from "./_theme"
-
-import "../styles/reset.css"
-import dynamic from "next/dynamic"
-import "../config/i18n"
 import Providers from "@/providers"
+
+import "../config/i18n"
+import "../styles/reset.css"
 
 function App({ Component, pageProps }: AppProps) {
   return (

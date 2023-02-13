@@ -1,13 +1,15 @@
 import React, { useCallback, useContext, useEffect, useState } from "react"
-import PlacesContainer from "@/styles/homeStyles/placesContainer"
 import { NextComponentType } from "next"
+
 import { useDropzone } from "react-dropzone"
-import placesApi from "@/repositories/placesApi"
-import showError from "@/utils/showError"
 import { toast } from "react-toastify"
-import { placesContext } from "@/providers/placesProvider"
 import { MdDelete } from "react-icons/md"
 import { useTranslation } from "react-i18next"
+
+import PlacesContainer from "@/styles/homeStyles/placesContainer"
+import placesApi from "@/repositories/placesApi"
+import showError from "@/utils/showError"
+import { placesContext } from "@/providers/placesProvider"
 
 const Places: NextComponentType = () => {
     const { places, setPlaces } = useContext(placesContext)

@@ -1,21 +1,23 @@
+import { NextComponentType } from "next"
+import React, { useContext, useEffect, useState } from "react"
+
+import { BiTrip } from "react-icons/bi"
+import Chart from "react-google-charts"
+import { MdAttachMoney } from "react-icons/md"
+import { useTranslation } from "react-i18next"
+
 import { themeContext } from "@/providers/ThemeProvider"
 import revenuesApi from "@/repositories/revenuesApi"
 import RevenuesContainer from "@/styles/homeStyles/RevenuesContainer"
 import showError from "@/utils/showError"
-import { NextComponentType } from "next"
-import React, { useContext, useEffect, useState } from "react"
-import { BiTrip } from "react-icons/bi"
-import Chart from "react-google-charts"
 import { Tstats } from "@/interfaces"
-import { MdAttachMoney } from "react-icons/md"
-import { useTranslation } from "react-i18next"
 
 const Revenues: NextComponentType = () => {
 
     const [data, setData] = useState<(string | number)[][]>()
     const [stats, setStats] = useState<Tstats>()
     const { theme } = useContext(themeContext)
-    const {t} = useTranslation()
+    const { t } = useTranslation()
 
     const options = {
         title: t("title char"),
@@ -39,7 +41,7 @@ const Revenues: NextComponentType = () => {
             }
         })()
     }, [])
-    
+
     return (
         <RevenuesContainer>
             {!data || !stats ?
