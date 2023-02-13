@@ -12,9 +12,10 @@ import Budget from "../budgets"
 import Revenues from "../revenues"
 import Settings from "../settings"
 import Exit from "../exit"
+import { useTranslation } from "react-i18next"
 
 const Aside = ({ setContent }: TsetContent) => {
-
+    const {t} = useTranslation()
     return (
         <AsideContainer>
             <div className="business">
@@ -33,19 +34,19 @@ const Aside = ({ setContent }: TsetContent) => {
                 </div>
             </div>
             <div className="dashboard">
-                <p className="menu">Dashboard</p>
+                <p className="menu">App</p>
                 <ul>
-                    <li onClick={() => setContent({ title: "Caminhões", element: <Truckes /> })} ><FaTruck className="icon" /><p>Caminhões</p></li>
-                    <li onClick={() => setContent({ title: "Localidades", element: <Places /> })} ><FaMapMarkerAlt className="icon" /><p>Localidades</p></li>
-                    <li onClick={() => setContent({ title: "Orçamentos", element: <Budget /> })} ><FaMoneyBillAlt className="icon" /><p>Orçamentos</p></li>
-                    <li onClick={() => setContent({ title: "Faturamentos", element: <Revenues /> })}><FaCashRegister className="icon" /><p>Faturamentos</p></li>
+                    <li onClick={() => setContent({ title: "truckes", element: <Truckes /> })} ><FaTruck className="icon" /><p>{t("truckes")}</p></li>
+                    <li onClick={() => setContent({ title: "places", element: <Places /> })} ><FaMapMarkerAlt className="icon" /><p>{t("places")}</p></li>
+                    <li onClick={() => setContent({ title: "budgets", element: <Budget /> })}><FaCashRegister className="icon" /><p>{t("budgets")}</p></li>
+                    <li onClick={() => setContent({ title: "revenues", element: <Revenues /> })} ><FaMoneyBillAlt className="icon" /><p>{t("revenues")}</p></li>
                 </ul>
             </div>
             <div className="preferences">
-                <p className="menu">Preferencias</p>
+                <p className="menu">{t("preferences")}</p>
                 <ul>
-                    <li onClick={() => setContent({ title: "Configurações", element: <Settings /> })}><IoIosSettings className="icon" /><p>Configurações</p></li>
-                    <li onClick={() => setContent({ title: "Sair", element: <Exit /> })}><IoMdExit className="icon" /><p>Sair</p></li>
+                    <li onClick={() => setContent({ title: "settings", element: <Settings /> })}><IoIosSettings className="icon" /><p>{t("settings")}</p></li>
+                    <li onClick={() => setContent({ title: "exit", element: <Exit /> })}><IoMdExit className="icon" /><p>{t("exit")}</p></li>
                 </ul>
             </div>
         </AsideContainer>

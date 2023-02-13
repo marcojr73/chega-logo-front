@@ -28,6 +28,18 @@ const SettingsContainer = styled.section`
         margin-top: 10%;
         color: var(--dark-color);
     }
+
+    .change{
+        display: flex;
+        width: 30%;
+        height: 25%;
+    }
+
+    button{
+        margin: 0 5%;
+        width: 100%;
+        height: 100%;
+    }
 `
 
 export default SettingsContainer

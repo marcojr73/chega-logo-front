@@ -7,10 +7,12 @@ import showError from "@/utils/showError"
 import { toast } from "react-toastify"
 import { placesContext } from "@/providers/placesProvider"
 import { MdDelete } from "react-icons/md"
+import { useTranslation } from "react-i18next"
 
 const Places: NextComponentType = () => {
     const { places, setPlaces } = useContext(placesContext)
     const [page, setPage] = useState(1)
+    const {t} = useTranslation()
 
     const onDrop = useCallback(async (uploadedFile: any) => {
         const data = new FormData()
@@ -62,19 +64,19 @@ const Places: NextComponentType = () => {
                 <input {...getInputProps()} />
                 {
                     isDragReject ?
-                        <p >Formato de arquivo não suportado</p> :
-                        <p >Carregue um arquivo</p>
+                        <p >{t("invalid type file")}</p> :
+                        <p >{t("load file")}</p>
                 }
             </section>
             <ul>
                 <li>
-                    <p className="name">Nome</p>
-                    <p className="distance">Distância</p>
+                    <p className="name">{t("name")}</p>
+                    <p className="distance">{t("distance")}</p>
                     <span></span>
                 </li>
                 {
                     places[0]?.id === -1 || places.length === 0 ?
-                        <p>Nenhuma localidade cadastrada</p>
+                        <p>{t("no registered locations")}</p>
                         :
                         places.map(place => {
                             return (
@@ -87,8 +89,8 @@ const Places: NextComponentType = () => {
                         })
                 }
                 <div className="toggle-pages">
-                    <p className="toggle" onClick={() => page > 1 ? setPage(page - 1) : null}>Página anterior</p>
-                    <p className="toggle" onClick={() => places.length === 10 ? setPage(page + 1) : null}>Próxima página</p>
+                    <p className="toggle" onClick={() => page > 1 ? setPage(page - 1) : null}>{t("previous page")}</p>
+                    <p className="toggle" onClick={() => places.length === 10 ? setPage(page + 1) : null}>{t("next page")}</p>
                 </div>
             </ul>
         </PlacesContainer>

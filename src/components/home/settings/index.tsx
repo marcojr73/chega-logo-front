@@ -4,11 +4,13 @@ import dark from "@/styles/themes/dark"
 import light from "@/styles/themes/light"
 import { NextComponentType } from "next"
 import React, { useContext } from "react"
-import {BsMoonStarsFill, BsSunFill} from "react-icons/bs"
+import { useTranslation } from "react-i18next"
+import { BsMoonStarsFill, BsSunFill } from "react-icons/bs"
 import Switch from "react-switch"
 
 const Settings: NextComponentType = () => {
     const { theme, setTheme } = useContext(themeContext)
+    const {t, i18n} = useTranslation()
 
     function toggleTheme() {
         setTheme(theme.title === "light" ? dark : light)
@@ -16,7 +18,7 @@ const Settings: NextComponentType = () => {
     return (
         <SettingsContainer>
             <div className="theme">
-                <h1>Tema</h1>
+                <h1>{t("theme")}</h1>
                 <Switch className="switch"
                     onChange={toggleTheme}
                     checked={theme.title === "dark"}
@@ -29,7 +31,11 @@ const Settings: NextComponentType = () => {
                 />
             </div>
             <div className="language">
-                
+                <h1>{t("language")}</h1>
+                <div className="change">
+                    <button onClick={() => i18n.changeLanguage("pt")}>PT</button>
+                    <button onClick={() => i18n.changeLanguage("en")}>EN</button>
+                </div>
             </div>
         </SettingsContainer>
     )
