@@ -7,14 +7,15 @@ import truckesApi from "@/repositories/truckesApi"
 import { MdDelete } from "react-icons/md"
 import { toast } from "react-toastify"
 import Image from "next/image"
+import { useTranslation } from "react-i18next"
 
 const ListTruckes = ({ page, setPage }: { page: number, setPage: React.Dispatch<React.SetStateAction<number>> }) => {
 
     const { truckes, setTruckes } = useContext(truckesContext)
+    const {t} = useTranslation()
 
     useEffect(() => {
         (async function () {
-            console.log(page)
             try {
                 const response = await truckesApi.findTruckesApi(page)
                 setTruckes(response)
@@ -38,17 +39,17 @@ const ListTruckes = ({ page, setPage }: { page: number, setPage: React.Dispatch<
     return (
         <ul className="table">
             <li>
-                <p className="item">Apelido</p>
-                <p className="item">Placa</p>
-                <p className="item">Ano</p>
-                <p className="item">Cor</p>
-                <p className="item">Rendimento</p>
+                <p className="item">{t("nickname")}</p>
+                <p className="item">{t("license plate")}</p>
+                <p className="item">{t("year")}</p>
+                <p className="item">{t("color")}</p>
+                <p className="item">{t("efficiency")}</p>
                 <span></span>
             </li>
             {
                 truckes[0]?.id === -1 || truckes.length === 0 ?
                     <div className="not-register">
-                        <p className="not-text">Nenhum Caminhão cadastrado</p>
+                        <p className="not-text">{t("no register truck")}</p>
                         <Image
                             src="/images/truckers-not-found.gif"
                             alt="truck-image"
@@ -72,8 +73,8 @@ const ListTruckes = ({ page, setPage }: { page: number, setPage: React.Dispatch<
                     })
             }
             <div className="toggle-pages">
-                <p className="toggle" onClick={() => page > 1 ? setPage(page - 1) : null}>Página anterior</p>
-                <p className="toggle" onClick={() => truckes.length === 10 ? setPage(page + 1) : null}>Próxima página</p>
+                <p className="toggle" onClick={() => page > 1 ? setPage(page - 1) : null}>{t("previous page")}</p>
+                <p className="toggle" onClick={() => truckes.length === 10 ? setPage(page + 1) : null}>{t("next page")}</p>
             </div>
         </ul>
     )

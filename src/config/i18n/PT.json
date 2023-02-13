@@ -1,0 +1,33 @@
+{
+    "translation": {
+        "truckes": "Caminhões",
+        "nickname": "Apelido",
+        "license plate": "Placa",
+        "year": "Ano",
+        "color": "Cor",
+        "efficiency": "Rendimento/L",
+        "no register truck": "Nenhum caminhão cadastrado",
+        "register": "Cadastrar",
+        "update": "Atualizar",
+        "next page": "Próxima página",
+        "previous page": "Página anterior",
+        "places": "Localidade",
+        "revenues": "Faturamento",
+        "budgets": "Orçamentos",
+        "settings": "Configurações",
+        "exit": "Sair",
+        "name": "Nome",
+        "distance": "Distancia",
+        "calculate": "Calcular",
+        "expected consumption": "Consumo esperado",
+        "driver value": "Preço do motorista",
+        "travel cost": "Custo da viagem",
+        "final price": "Preço final",
+        "number sales": "Número total de viagens",
+        "total revenues": "Faturamento total",
+        "avarage revenues": "Média de faturamento por mês",
+        "title char": "Faturamento de viagens nos ultimos 12 meses",
+        "language": "Linguagem",
+        "theme": "Tema"
+    }
+}

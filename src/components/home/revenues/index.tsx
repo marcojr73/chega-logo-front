@@ -8,15 +8,17 @@ import { BiTrip } from "react-icons/bi"
 import Chart from "react-google-charts"
 import { Tstats } from "@/interfaces"
 import { MdAttachMoney } from "react-icons/md"
+import { useTranslation } from "react-i18next"
 
 const Revenues: NextComponentType = () => {
 
     const [data, setData] = useState<(string | number)[][]>()
     const [stats, setStats] = useState<Tstats>()
     const { theme } = useContext(themeContext)
+    const {t} = useTranslation()
 
     const options = {
-        title: "Faturamento de viagens nos ultimos 12 meses",
+        title: t("title char"),
         curveType: "function",
         colors: [theme.colors.secondary],
         legend: { position: "none" },
@@ -37,6 +39,7 @@ const Revenues: NextComponentType = () => {
             }
         })()
     }, [])
+    
     return (
         <RevenuesContainer>
             {!data || !stats ?
@@ -53,17 +56,17 @@ const Revenues: NextComponentType = () => {
             <ul>
                 <li>
                     <BiTrip className="icon" />
-                    <p>Numero de viagens realizadas</p>
+                    <p>{t("number sales")}</p>
                     <p>{stats?.sumTravels}</p>
                 </li>
                 <li>
                     <MdAttachMoney className="icon" />
-                    <p>Faturamento total</p>
+                    <p>{t("total revenues")}</p>
                     <p>{stats?.sumValues.toFixed(2)} R$</p>
                 </li>
                 <li>
                     <MdAttachMoney className="icon" />
-                    <p>Media de faturamento mensal</p>
+                    <p>{t("avarage revenues")}</p>
                     <p>{stats?.mediaValues.toFixed(2)} R$</p>
                 </li>
             </ul>

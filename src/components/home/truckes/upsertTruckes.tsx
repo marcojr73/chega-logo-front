@@ -2,14 +2,15 @@ import { truckesContext } from "@/providers/truckesProvider"
 import truckesApi from "@/repositories/truckesApi"
 import Loader from "@/utils/loader"
 import showError from "@/utils/showError"
-import { NextComponentType } from "next"
 import React, { useContext, useState } from "react"
 import { useForm } from "react-hook-form"
+import { useTranslation } from "react-i18next"
 import { toast } from "react-toastify"
 
 const UpsertTruckes= ({page}: {page: number}) => {
-    const [textNewTruck, setTextNewTruck] = useState<"Cadastrar" | JSX.Element>("Cadastrar")
-    const [textUpdateTruck, setTextUpdateTruck] = useState<"Atualizar" | JSX.Element>("Atualizar")
+    const {t} = useTranslation()
+    const [textNewTruck, setTextNewTruck] = useState<string | null | JSX.Element>(t("register"))
+    const [textUpdateTruck, setTextUpdateTruck] = useState<string | null | JSX.Element>(t("update"))
     const { setTruckes } = useContext(truckesContext)
 
     const {
@@ -23,14 +24,14 @@ const UpsertTruckes= ({page}: {page: number}) => {
         try {
             setTextNewTruck(<Loader />)
             await truckesApi.newTruckApi(data)
-            setTextNewTruck("Cadastrar")
+            setTextNewTruck(t("register"))
             const response = await truckesApi.findTruckesApi(page)
             setTruckes(response)
             toast("Sucesso")
             // reset()
         } catch (error) {
             showError(error)
-            setTextNewTruck("Cadastrar")
+            setTextNewTruck(t("register"))
         }
     }
 
@@ -38,13 +39,13 @@ const UpsertTruckes= ({page}: {page: number}) => {
         try {
             setTextUpdateTruck(<Loader />)
             await truckesApi.updateTruckApi(data)
-            setTextUpdateTruck("Atualizar")
+            setTextUpdateTruck(t("update"))
             const response = await truckesApi.findTruckesApi(page)
             setTruckes(response)
             toast("Sucesso")
             // reset()
         } catch (error) {
-            setTextUpdateTruck("Atualizar")
+            setTextUpdateTruck(t("update"))
             showError(error)
         }
     }

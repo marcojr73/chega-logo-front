@@ -1,0 +1,33 @@
+{
+    "translation": {
+        "truckes": "Truckes",
+        "nickname": "Nickname",
+        "license plate": "License plate",
+        "year": "Year",
+        "color": "Color",
+        "efficiency": "Efficiency/L",
+        "no register truck": "no registered truck",
+        "register": "Register",
+        "update": "Update",
+        "next page": "Next page",
+        "previous page": "Previous page",
+        "places": "Places",
+        "revenues": "Revenues",
+        "budgets": "Budgets",
+        "settings": "Settings",
+        "exit": "Exit",
+        "name": "Name",
+        "distance": "Distance",
+        "calculate": "Calculate",
+        "expected consumption": "Expected consumption",
+        "driver value": "Driver price",
+        "travel cost": "Travel cost",
+        "final price": "Final price",
+        "number sales": "Number travels",
+        "total revenues": "Total revenues",
+        "avarage revenues": "Avarage revenues",
+        "title char": "Travel revenue in the last 12 months",
+        "language": "Language",
+        "theme": "Theme"
+    }
+}

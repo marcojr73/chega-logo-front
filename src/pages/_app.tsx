@@ -7,6 +7,7 @@ import "../styles/reset.css"
 import dynamic from "next/dynamic"
 import { TruckesContextProvider } from "@/providers/truckesProvider"
 import { PlacesContextProvider } from "@/providers/placesProvider"
+import "../config/i18n"
 
 function App({ Component, pageProps }: AppProps) {
   return (

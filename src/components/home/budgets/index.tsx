@@ -7,9 +7,11 @@ import showError from "@/utils/showError"
 import { NextComponentType } from "next"
 import React, { useContext } from "react"
 import { useForm } from "react-hook-form"
+import { useTranslation } from "react-i18next"
 import { toast } from "react-toastify"
 
 const Budget: NextComponentType = () => {
+    const {t} = useTranslation()
 
     const { truckes } = useContext(truckesContext)
     const { places } = useContext(placesContext)
@@ -66,18 +68,18 @@ const Budget: NextComponentType = () => {
                             <p className="error">Insira o preço do Combustível</p> : null}
                     </div>
                 </form>
-                <button type="submit" onClick={() => handleSubmit(calculator)()}>Calcular</button>
+                <button type="submit" onClick={() => handleSubmit(calculator)()}>{t("calculate")}</button>
             </section>
             {view ?
                 <section className="answer">
                     <ul>
-                        <p className="stats">Consumo esperado: <span>{consumption.toFixed(2)} L</span></p>
-                        <p className="stats">Distância: <span>{distance} Km</span></p>
-                        <p className="stats">Preço do motorista e ajudante: <span>{driverPrice.toFixed(2)} R$</span></p>
-                        <p className="stats">Custo da viagem:<span>{travelCost.toFixed(2)} R$</span></p>
-                        <p className="stats">Preço final: <span>{finalPrice.toFixed(2)} R$</span></p>
+                        <p className="stats">{t("expected consumption")}: <span>{consumption.toFixed(2)} L</span></p>
+                        <p className="stats">{t("distance")}: <span>{distance} Km</span></p>
+                        <p className="stats">{t("driver value")}: <span>{driverPrice.toFixed(2)} R$</span></p>
+                        <p className="stats">{t("travel cost")}:<span>{travelCost.toFixed(2)} R$</span></p>
+                        <p className="stats">{t("final price")}: <span>{finalPrice.toFixed(2)} R$</span></p>
                     </ul>
-                    <button className="register" onClick={() => registerTravel(finalPrice)}>Registrar viagem</button>
+                    <button className="register" onClick={() => registerTravel(finalPrice)}>{t("register travel")}</button>
                 </section>
                 : null}
         </BudgetContainer>
