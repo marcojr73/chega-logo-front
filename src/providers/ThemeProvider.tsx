@@ -12,8 +12,8 @@ const initialValue = {
 export const themeContext = createContext<Ttheme>(initialValue)
 
 export const ThemeContextProvider = ({ children }: TProps) => {
-    // const [theme, setTheme] = usePersistedState("theme", dark)
-    const [theme, setTheme] = useState(dark)
+    const [theme, setTheme] = usePersistedState("theme", dark)
+    // const [theme, setTheme] = useState(dark)
     return (
         <themeContext.Provider value={{ theme, setTheme }}>
             {children}

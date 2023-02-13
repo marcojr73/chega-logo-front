@@ -3,8 +3,9 @@ export default {
     colors: {
         backgroundColor: "#FFFFFF",
         primary: "#F0F0F4",
-        secondary: "#DBF7E8",
+        secondary: "#5BC0BE",
         focusColor: "#030728",
-        textColor: "#000000"
+        textColor: "#000000",
+        offTextColor: "black"
     }
 }

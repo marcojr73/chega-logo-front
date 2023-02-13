@@ -6,12 +6,12 @@ import Image from "next/image"
 import { FaCashRegister, FaMapMarkerAlt, FaMoneyBillAlt, FaTruck } from "react-icons/fa"
 import { IoIosSettings, IoMdExit } from "react-icons/io"
 import { TsetContent } from "@/interfaces"
-import Truckes from "./truckes"
-import Places from "./places"
-import Budget from "./budgets"
-import Revenues from "./revenues"
-import Settings from "./settings"
-import Exit from "./exit"
+import Truckes from "../truckes"
+import Places from "../places"
+import Budget from "../budgets"
+import Revenues from "../revenues"
+import Settings from "../settings"
+import Exit from "../exit"
 
 const Aside = ({ setContent }: TsetContent) => {
 

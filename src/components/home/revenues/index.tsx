@@ -37,6 +37,7 @@ const Revenues: NextComponentType = () => {
             }
         })()
     }, [])
+    
     return (
         <RevenuesContainer>
             {!data || !stats ?
