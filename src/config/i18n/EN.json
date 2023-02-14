@@ -30,6 +30,7 @@
         "language": "Language",
         "theme": "Theme",
         "register travel": "Register travel",
-        "really exit": "Really want to leave?"
+        "really exit": "Really want to leave?",
+        "load file": "Load file .csv"
     }
 }

@@ -30,6 +30,7 @@
         "language": "Linguagem",
         "theme": "Tema",
         "register travel": "Registrar viagem",
-        "really exit": "Deseja mesmo sair?"
+        "really exit": "Deseja mesmo sair?",
+        "load file": "Solte um arquivo .csv"
     }
 }
