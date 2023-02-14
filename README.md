@@ -47,13 +47,13 @@
 ## Demo
 
 <p align="center">
-   <img width=700 src="./public/images/screen1.png"/>
-   <img width=700 src="./public/images/screen2.png"/>
-   <img width=700 src="./public/images/screen3.png"/>
-   <img width=700 src="./public/images/screen4.png"/>
-   <img width=700 src="./public/images/screen7.png"/>
-   <img width=700 src="./public/images/screen5.png"/>
-   <img width=700 src="./public/images/screen6.png"/>
+   <img width=800 src="./public/images/screen1.png"/>
+   <img width=800 src="./public/images/screen2.png"/>
+   <img width=800 src="./public/images/screen3.png"/>
+   <img width=800 src="./public/images/screen4.png"/>
+   <img width=800 src="./public/images/screen7.png"/>
+   <img width=800 src="./public/images/screen5.png"/>
+   <img width=800 src="./public/images/screen6.png"/>
 </p>
 
 
