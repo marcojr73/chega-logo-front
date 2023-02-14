@@ -1,38 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Description
+- Seu João é dono da empresa Chega Logo, uma pequena transportadora. onde fica o galpão dessa empresa, caminhões saem carregando suas entregas para outras localidades, onde deixam o carregamento e retornam. Faz isso com um preço muito competitivo e com excelente pontualidade. O segredo dessa eficiência, segundo Seu João, é o controle que faz das viagens, caminhões e localidades através de uma planilha, cada um em uma respectiva aba. Lá, ele registra tudo o que precisa para calcular o preço das entregas de forma que seja justo mas, também, lucrativo. Contudo, seu João vem enfrentando dificuldades em lidar com a quantidade de dados em sua planilha, que cresce cada vez mais. 
+- Esta aplicação é responsavel por organizar todo o esquema de transportes, através de um login de usuário e senha, seu João pode gerenciar tudo de forma dinâmica e segura.
 
-First, run the development server:
+
+- [veja meu repositório back end desta aplicação aqui](https://github.com/marcojr73/chega-logo-api)
+
+***
+
+## Demo
+
+<p align="center">
+   <img width=500 src="./public/images/screen1.png"/>
+   <img width=500 src="./public/images/screen2.png"/>
+   <img width=500 src="./public/images/screen3.png"/>
+   <img width=500 src="./public/images/screen4.png"/>
+   <img width=500 src="./public/images/screen7.png"/>
+   <img width=500 src="./public/images/screen5.png"/>
+   <img width=500 src="./public/images/screen6.png"/>
+</p>
+
+    ## technologies and concepts
+
+- Next
+- Typescript
+- Context API
+- LocalStorage
+- Toasts (react-toastify) 
+- styled-Componentes
+- Themes
+- Languages
+***
+
+## Running the app
+
+- Install my project, its dependencies and launch backend on port 5000
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+  git clone https://github.com/marcojr73/chega-logo-front
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+  npm install
+  
+  npm run dev
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+***
+    

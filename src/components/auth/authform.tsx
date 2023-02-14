@@ -52,7 +52,7 @@ const AuthForm = () => {
                 <p className="error">insira um nome de usuário válido</p> : null}
             </div>
             <div className="input">
-              <input type="text" placeholder="Password" {...register("password", { required: true, minLength: 8})} />
+              <input type="password" placeholder="Password" {...register("password", { required: true, minLength: 8})} />
               {errors?.password?.type === "required" || errors?.password?.type === "minLength" ?
                 <p className="error">Senha precisa ter no mńimo 8 digitos</p> : null}
             </div>
