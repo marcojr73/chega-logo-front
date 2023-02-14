@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "docker:build": "docker build -t chega-logo .",
+    "docker:run": "docker run -p 3000:3000 chega-logo",
+    "docker:stop": "docker stop $(docker ps -a -q)"
   },
   "dependencies": {
     "@next/font": "13.1.6",
