@@ -20,7 +20,7 @@
    <img width=700 src="./public/images/screen6.png"/>
 </p>
 
-    ## technologies and concepts
+## technologies and concepts
 
 - Next
 - Typescript
