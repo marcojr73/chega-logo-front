@@ -29,6 +29,7 @@
         "title char": "Faturamento de viagens nos ultimos 12 meses",
         "language": "Linguagem",
         "theme": "Tema",
+        "register travel": "Registrar viagem",
         "really exit": "Deseja mesmo sair?"
     }
 }

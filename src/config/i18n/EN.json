@@ -29,6 +29,7 @@
         "title char": "Travel revenue in the last 12 months",
         "language": "Language",
         "theme": "Theme",
+        "register travel": "Register travel",
         "really exit": "Really want to leave?"
     }
 }
